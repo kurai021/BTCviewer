@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BTCviewer
 
 ## Getting started
@@ -195,3 +196,9 @@ $ grunt server:test
 This will start a web server in [0.0.0.0:9002](0.0.0.0:9002) with your
 test suite loaded in `/`.
 
+=======
+BTCviewer
+=========
+
+A Bitcoin to another currencies converter and Bitcoin price chart
+>>>>>>> 46d73f682f7011a8743b1b4b1c531f4a22c623b9
