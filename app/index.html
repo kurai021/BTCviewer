@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" ng-app="BTCviewer">
+<head>
+  <title>BTCviewer</title>
+  <meta charset="utf-8">
+  <link href="/styles/gaiabb/all.css" rel="stylesheet" type="text/css">
+  <link href="/styles/main.css" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/bitcoinprices.js"></script>
+  <script type="text/javascript" src="scripts/bitcoinprices.init.js"></script>
+  <script type="text/javascript" src="scripts/bitcoin-converter.js"></script>
+  <script type="text/javascript" src="components/ResponsiveSlides.js/responsiveslides.min.js"></script>
+  <script type="text/javascript" src="components/l10n.js/l10n.min.js"></script>
+  <script type="text/javascript" src="scripts/localization.js"></script>
+  <script type="text/javascript" src="scripts/slides.js"></script>
+  <script type="text/javascript" src="scripts/prompt.js"></script>
+  <script type="text/javascript" src="components/jquery-rss/dist/jquery.rss.min.js"></script>
+  <script>
+      jQuery(function($) {
+        $("#rss-feeds").rss("http://feeds.feedburner.com/BitcoinMagazine?format=xml",{
+            limit: 10,
+            ssl: true,
+            effect: 'slideFastSynced',
+            layoutTemplate: '<div class="feed-container">{entries}</div>',
+            entryTemplate: '<p><a href="{url}">{title}: </a><span >{shortBodyPlain} </span><a target="_blank"  href="https://www.facebook.com/sharer/sharer.php?u={url}">Share on Facebook</a><a target="_blank" href="https://twitter.com/intent/tweet?original_referer={url}&text={title}&tw_p=tweetbutton&url={url}&via=raaztux"> Tweet</a></p>'
+        })
+      })
+  </script>
+  
+</head>
+<body role="application" ng-controller="BTC-Ctrl">
+  <section id="index" ng-hide="showbutton()">
+      <section role="region">
+          <header class="fixed">
+              <menu type="toolbar">
+                  
+                  <a href="#"><span id="options1" class="icon icon-help">Options</span></a>
+              </menu>
+              <h1>BTC Converter</h1>
+          </header>
+  
+      <article class="content">
+          <ul role="tablist" data-type="filter" data-items="2">
+              <li id="filter1-1" role="tab">
+                  <h2 id="%input">Input</h2>
+                  <h3 id="%amount-input">Amount</h3>
+                  <p><input type="text" id="input-amount" value="1.0"></p>
+                  <h3 id="%currency-input">Currency</h3>
+                  <select name="" id="input-currency">
+                      <option selected value="BTC">BTC</option>
+                      <option value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="CNY">CNY</option>
+                      <option value="GBP">GBP</option>
+                      <option value="JPY">JPY</option>
+                  </select>
+              </li>
+              
+              <li id="filter1-2" role="tab">
+                  <h2 id="%output">Output</h2>
+                  <h3 id="%amount-output">Amount</h3>
+                  <p><input type="text" id="output-amount" readonly></p>
+                  <h3 id="%currency-output">Currency</h3>
+                  <select name="" id="output-currency">
+                      <option value="BTC">BTC</option>
+                      <option selected value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="CNY">CNY</option>
+                      <option value="GBP">GBP</option>
+                      <option value="JPY">JPY</option>
+                  </select>  
+              </li>
+          </ul>
+      </article>
+    </section>
+    <section>
+        <ul role="tablist" data-item="2" class="bottom">
+            <li id="panel1" role="tab">
+                <button id="%charts" ng-click="showbuttons()">Charts</button>
+            </li>
+            <li id="panel2" role="tab">
+                <button id="news">News</button>
+            </li>
+        </ul>
+    </section>
+</section>
+    
+    <!-- Bitcoin Chart View -->
+<section id="buttons" ng-show="showbutton()">
+    <section role="region">
+        <header class="fixed">
+            <menu type="toolbar">
+                <a href="#"><span id="options2" class="icon icon-help">Options</span></a>
+            </menu>
+            <h1>BTC Price Chart</h1>
+        </header>
+        <article id="content" class="content">
+            <ul class="rslides" id="slider2">
+                <li><img class="chart" src="http://www.bitcoinprice.com/charts/fsro81ud3s8xsbuu.png" alt="BTC/USD chart"/></li>
+                <li><img class="chart" src="http://www.bitcoinprice.com/charts/uz5wqtungnz7k5xq.png" alt="BTC/EUR chart"/></li>
+                <li><img class="chart" src="http://www.bitcoinprice.com/charts/9itetkw4jqgerumk.png" alt="BTC/CNY chart"/></li>
+                <li><img class="chart" src="http://www.bitcoinprice.com/charts/jbnm3rga0a6iwnwf.png" alt="BTC/GBP chart"/></li>
+            </ul>
+        </article>
+    </section>
+    <section>
+        <ul role="tablist" data-item="2" class="bottom">
+            <li id="panel1" role="tab">
+                <button id="%converter" ng-click="hidebuttons()">Converter</button>
+            </li>
+            <li id="panel2" role="tab">
+                <button id="news2">News</button>
+            </li>
+        </ul>
+    </section>
+</section>
+    
+<form id="dialog1" role="dialog" data-type="confirm">
+    <section>
+        <img src="icons/90x90.png" alt="">
+        <h1>BTCviewer</h1>
+        <em>0.0.1</em>
+        <p id="%paragraph-about">BTC and another currencies converter and price graph viewer (USD, EUR, CNY and GBP)</p>
+        <span id="%span-about">If you liked this app, you could donate some Bitcoins: </span><b>1CLx8FpptXGZK39UNmT7UeiiCfrTy2wvt</b><br><br>
+        <em id="%em-about">This software is licensed under the: 
+            <a href="https://www.gnu.org/licenses/gpl.html"><img src="images/gplv3-88x31.png" alt=""></a>
+        </em>
+    </section>
+    <menu>
+        <button id="ok_about" type="button">OK</button>
+    </menu>   
+</form>
+    
+<form id="dialog2" role="dialog" data-type="confirm">
+    <section>
+        <div id="rss-feeds">
+            <h3>Bitcoin Magazine</h3>
+        </div>
+    </section>
+    <menu>
+        <button id="quit" type="button">Quit</button>
+    </menu>   
+</form>
+    
+    <script type="text/javascript" src="components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="scripts/controller.js"></script>
+    <script type="text/javascript" src="scripts/l10n.init.js"></script>
+    
+    <script type="text/javascript" src="scripts/receiptverifier.js"></script>
+    <script type="text/javascript" src="scripts/receiptverifier-ui.js"></script>
+    <script type="text/javascript" src="scripts/receiptverifier.init.js"></script>
+</body>
+</html>
+

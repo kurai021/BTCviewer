@@ -1,0 +1,36 @@
+{
+  "name": "jquery-rss",
+  "version": "1.4.1",
+  "homepage": "https://github.com/sdepold/jquery-rss",
+  "authors": [
+    "Sascha Depold <sascha@depold.com>"
+  ],
+  "description": "An easy-to-use rss plugin for jquery with templating.",
+  "main": "dist/jquery.rss.min.js",
+  "keywords": [
+    "jquery",
+    "rss",
+    "templating"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "spec",
+    "examples",
+    "lib"
+  ],
+  "dependencies": {
+    "jquery": ">=1.6.4"
+  },
+  "_release": "1.4.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.4.1",
+    "commit": "ebb4cc54a8e06461d85c1eaa6ac92a7ae47550f3"
+  },
+  "_source": "git://github.com/sdepold/jquery-rss.git",
+  "_target": "~1.4.1",
+  "_originalSource": "jquery-rss",
+  "_direct": true
+}

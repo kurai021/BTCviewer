@@ -1,0 +1,29 @@
+{
+  "name": "BTCviewer",
+  "version": "0.0.1",
+  "authors": [
+    "Kurai021 <samahel021@gmail.com>"
+  ],
+  "description": "A BTC converter and BTC price chart viewer",
+  "keywords": [
+    "bitcoin"
+  ],
+  "license": "GPLv3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ResponsiveSlides.js": "*",
+    "angular": "1.2.12",
+    "angular-route": "~1.2.12",
+    "jquery": "*",
+    "sizzle": "1.10.16",
+    "l10n.js": "*"
+  }
+}
