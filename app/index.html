@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <link href="/styles/gaiabb/all.css" rel="stylesheet" type="text/css">
   <link href="/styles/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="components/fontawesome/css/font-awesome.min.css">
   
   <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="scripts/bitcoinprices.js"></script>
@@ -23,7 +24,7 @@
             ssl: true,
             effect: 'slideFastSynced',
             layoutTemplate: '<div class="feed-container">{entries}</div>',
-            entryTemplate: '<p><a href="{url}">{title}: </a><span >{shortBodyPlain} </span><a target="_blank"  href="https://www.facebook.com/sharer/sharer.php?u={url}">Share on Facebook</a><a target="_blank" href="https://twitter.com/intent/tweet?original_referer={url}&text={title}&tw_p=tweetbutton&url={url}&via=raaztux"> Tweet</a></p>'
+            entryTemplate: '<p><img src="{teaserImageUrl}" style="width: 100%; height:auto;"><a href="{url}" style="text-align:center;">{title}</a><br><span>{shortBodyPlain}</span><br> <a target="_blank"  href="https://www.facebook.com/sharer/sharer.php?u={url}"><i class="fa fa-2x fa-facebook-square"></i></a> <a target="_blank" href="https://twitter.com/intent/tweet?original_referer={url}&text={title}&tw_p=tweetbutton&url={url}&via=raaztux"><i class="fa fa-2x fa-twitter-square"></i></a></p>'
         })
       })
   </script>
@@ -34,10 +35,9 @@
       <section role="region">
           <header class="fixed">
               <menu type="toolbar">
-                  
                   <a href="#"><span id="options1" class="icon icon-help">Options</span></a>
               </menu>
-              <h1>BTC Converter</h1>
+              <h1>Converter</h1>
           </header>
   
       <article class="content">
@@ -47,7 +47,7 @@
                   <h3 id="%amount-input">Amount</h3>
                   <p><input type="text" id="input-amount" value="1.0"></p>
                   <h3 id="%currency-input">Currency</h3>
-                  <select name="" id="input-currency">
+                  <select class="button" name="" id="input-currency">
                       <option selected value="BTC">BTC</option>
                       <option value="USD">USD</option>
                       <option value="EUR">EUR</option>
@@ -62,7 +62,7 @@
                   <h3 id="%amount-output">Amount</h3>
                   <p><input type="text" id="output-amount" readonly></p>
                   <h3 id="%currency-output">Currency</h3>
-                  <select name="" id="output-currency">
+                  <select class="button" name="" id="output-currency">
                       <option value="BTC">BTC</option>
                       <option selected value="USD">USD</option>
                       <option value="EUR">EUR</option>
@@ -93,7 +93,7 @@
             <menu type="toolbar">
                 <a href="#"><span id="options2" class="icon icon-help">Options</span></a>
             </menu>
-            <h1>BTC Price Chart</h1>
+            <h1>Price Chart</h1>
         </header>
         <article id="content" class="content">
             <ul class="rslides" id="slider2">
@@ -120,9 +120,10 @@
     <section>
         <img src="icons/90x90.png" alt="">
         <h1>BTCviewer</h1>
-        <em>0.0.1</em>
-        <p id="%paragraph-about">BTC and another currencies converter and price graph viewer (USD, EUR, CNY and GBP)</p>
-        <span id="%span-about">If you liked this app, you could donate some Bitcoins: </span><b>1CLx8FpptXGZK39UNmT7UeiiCfrTy2wvt</b><br><br>
+        <em>0.0.3</em>
+        <p id="%paragraph-about">BTC to another currencies converter and price graph viewer (USD, EUR, CNY and GBP)</p>
+        <span id="%span-about">If you liked this app, you could donate some Bitcoins: </span><b>1CLx8FpptXGZK39UNmT7UeiiCfrTy2wvt</b>
+        <br><br>
         <em id="%em-about">This software is licensed under the: 
             <a href="https://www.gnu.org/licenses/gpl.html"><img src="images/gplv3-88x31.png" alt=""></a>
         </em>
@@ -135,7 +136,7 @@
 <form id="dialog2" role="dialog" data-type="confirm">
     <section>
         <div id="rss-feeds">
-            <h3>Bitcoin Magazine</h3>
+            <h4>Bitcoin Magazine</h4>
         </div>
     </section>
     <menu>
@@ -147,10 +148,6 @@
     <script type="text/javascript" src="components/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="scripts/controller.js"></script>
     <script type="text/javascript" src="scripts/l10n.init.js"></script>
-    
-    <script type="text/javascript" src="scripts/receiptverifier.js"></script>
-    <script type="text/javascript" src="scripts/receiptverifier-ui.js"></script>
-    <script type="text/javascript" src="scripts/receiptverifier.init.js"></script>
 </body>
 </html>
 

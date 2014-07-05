@@ -24,6 +24,7 @@
     "angular-route": "~1.2.12",
     "jquery": "*",
     "sizzle": "1.10.16",
-    "l10n.js": "*"
+    "l10n.js": "*",
+	"font-awesome": "4.1.0"
   }
 }

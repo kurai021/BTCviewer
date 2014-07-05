@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.3",
   "name": "BTCviewer",
   "description": "A Bitcoin to another currencies converter and Bitcoin price chart",
   "launch_path": "/index.html",
